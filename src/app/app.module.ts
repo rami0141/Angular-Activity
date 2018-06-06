@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+// angular needs to know where the things are
+//Angular gets started and it tells angular there is this AppComponent to read
+// package from the form packag
+// import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -8,7 +12,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    // FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
