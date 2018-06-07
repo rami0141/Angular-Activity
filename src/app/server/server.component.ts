@@ -14,5 +14,11 @@ import { Component } from '@angular/core';
 })
 
 export class ServerComponent {
+  // declaration of number and string is not required
+  serverId: number = 10;
+  serverStatus: string = 'offline';
 
+  getServerStatus() {
+    return this.serverStatus;
+  }
 }
