@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 @Component({
   //pass a javascript object to this decorator to configure it
   // will be stored as meta data
-  //html tag to use - selector should be a string
+  //html tag to use - selector should be a string and unique
   selector: 'app-server',
   //reference a file
   templateUrl: './server.component.html'
