@@ -1,2 +1,17 @@
+<!-- dynamically bind a property "[]" -->
+<!--  button disabled only if it's false and not true  -->
+<!--  Event Binding (click)="onCreateServer()" -->
+<label>Server Name</label>
+<input
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)">
+  <!--  $event - capture input data -->
+  <p>{{ serverName }}</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+
+<!-- Property binding - inside element -->
+<!-- <p [innerText]="allowNewServer"></p> -->
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
