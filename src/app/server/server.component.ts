@@ -10,7 +10,12 @@ import { Component } from '@angular/core';
   //html tag to use - selector should be a string and unique
   selector: 'app-server',
   //reference a file
-  templateUrl: './server.component.html'
+  templateUrl: './server.component.html',
+  styles: [`
+    .online {
+      color: white;
+    }
+  `]
 })
 
 export class ServerComponent {
@@ -18,7 +23,17 @@ export class ServerComponent {
   serverId: number = 10;
   serverStatus: string = 'offline';
 
+  constructor() {
+    // If the random number is greater than 0.5 - status will be online
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+  }
+
   getServerStatus() {
     return this.serverStatus;
+  }
+
+  getColor() {
+    // if serverStatus is online, I will get green if not it will be red
+    return this.serverStatus === 'online' ? 'green' : 'red';
   }
 }
