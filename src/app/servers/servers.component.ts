@@ -12,7 +12,8 @@ export class ServersComponent implements OnInit {
   // don't want to allow the user to create a new server
   allowNewServer = false;
   serverCreationStatus = "No server was created!"
-  serverName = '';
+  serverName = 'Testserver';
+  serverCreated = false;
 
   constructor() {
     // after 2000 milliseconds = 2 seconds
@@ -24,7 +25,8 @@ export class ServersComponent implements OnInit {
   ngOnInit() {
   }
   onCreateServer() {
-    this.serverCreationStatus = ' Server was created!'
+    this.serverCreated = true;
+    this.serverCreationStatus = ' Server was created!  Name is ' + this.serverName;
   }
   onUpdateServerName(event: Event) {
     // Output what the user typed

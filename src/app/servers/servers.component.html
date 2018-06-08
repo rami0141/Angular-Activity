@@ -2,16 +2,24 @@
 <!--  button disabled only if it's false and not true  -->
 <!--  Event Binding (click)="onCreateServer()" -->
 <label>Server Name</label>
-<input
-  type="text"
-  class="form-control"
-  (input)="onUpdateServerName($event)">
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
   <!--  $event - capture input data -->
-  <p>{{ serverName }}</p>
+<input type="text"class="form-control" [(ngModel)]="serverName">
+<!-- it will trigger  on the input event and update the server name in our component automatically-->
+<br>
+<!-- <p>{{ serverName }}</p> -->
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
-
+<br>
 <!-- Property binding - inside element -->
 <!-- <p [innerText]="allowNewServer"></p> -->
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<!-- ngIf is a structural directive - changes the structure of our DOM -->
+<hr>
+<p *ngIf="serverCreated; else noServer">Server was created! The Server name is {{ serverName }}</p>
+
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>
+
 <app-server></app-server>
 <app-server></app-server>
